@@ -21,11 +21,11 @@ public class Humain {
 	}
 	
 	public void direBonjour() {
-		System.out.println("Bonjour ! je m'appelle"+nom+"et j'aime boire du"+boissonPref);
+		System.out.println("Bonjour ! je m'appelle "+nom+" et j'aime boire du "+boissonPref);
 	}
 	
 	public void Boire() {
-		System.out.println("Mmmm,un bon verre de"+boissonPref+"! GLOUPS!");
+		System.out.println("Mmmm,un bon verre de "+boissonPref+" ! GLOUPS!");
 	}
 
 
@@ -43,7 +43,7 @@ public class Humain {
 
 	public void Acheter(String bien,int prix) {
 			if (argent>=prix) {
-				System.out.println("- J'ai"+argent+"sous en poche. Je vais pouvoir m'offrir"+bien+ "à"+prix+" sous");
+				System.out.println("- J'ai "+argent+" sous en poche. Je vais pouvoir m'offrir "+bien+ " à "+prix+" sous");
 				perdreArgent(prix);
 			}
 			else {
