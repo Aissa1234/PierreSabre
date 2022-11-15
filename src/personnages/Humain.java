@@ -5,6 +5,9 @@ public class Humain {
 	private String nom;
 	private String boissonPref;
 	private int argent;
+	private int nbConnaissance=0;
+	private Humain [] memoire=new Humain[30];
+	
 	
 	public Humain(String nom,String boissonPref,int argent) {
 		this.nom=nom;
@@ -40,6 +43,39 @@ public class Humain {
 	public void parler(String texte) {
 		System.out.println("("+nom+") - "+texte);
 	}
+
+	
+	
+	public void memoriser(Humain humain) {
+		if (nbConnaissance<memoire.length){
+			memoire[nbConnaissance]=humain;
+			nbConnaissance++;
+		}
+		else {
+			for(int i=0;i<memoire.length;i++) {
+				memoire[i]=memoire[i+1];
+				
+				
+			}
+			memoire[memoire.length-1]=humain;
+		}
+	}
+	public void repondre(Humain humain) {
+		direBonjour();
+		memoriser(humain);
+	}
+	
+	public void seFaireConnaissance(Humain humain) {
+		direBonjour();
+		humain.repondre(humain);
+		memoriser(humain);
+		
+	}
+	
+	public void listerConnaissance() {
+		
+	}
+	
 
 	public void Acheter(String bien,int prix) {
 			if (argent>=prix) {
